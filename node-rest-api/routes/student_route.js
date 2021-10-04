@@ -82,7 +82,7 @@ student_Route.route('/delete-student-all').delete((req, res) => {
 });
 
 //search by name
-student_Route.route({name:{ $regexp: new RegExp(name), $options: "i"}}).get((req, res) => {
+student_Route.route({name:{ $regexp: new RegExp(), $options: "i"}}).get((req, res) => {
   Student.find(req.params.name,(error, data) => {
     if (error) {
       return next(error)
